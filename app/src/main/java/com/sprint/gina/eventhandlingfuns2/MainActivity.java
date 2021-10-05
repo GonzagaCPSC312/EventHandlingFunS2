@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity /*implements View.OnClickListener*/ {
     public static final String TAG = "MainActivityTag";
@@ -36,6 +37,16 @@ public class MainActivity extends AppCompatActivity /*implements View.OnClickLis
                 // task: on button click, grab the two edittexts' strings
                 // print then to log cat
                 // clear out the editexts
+                EditText usernameET = findViewById(R.id.editTextUsername);
+                EditText passwordET = findViewById(R.id.editTextPassword);
+
+                String username = usernameET.getText().toString();
+                String password = passwordET.getText().toString();
+
+                Log.d(TAG, "onClick: " + username + " " + password);
+
+                usernameET.setText("");
+                passwordET.setText("");
             }
         });
     }
